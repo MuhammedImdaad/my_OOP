@@ -16,6 +16,7 @@ public:
         m_array[m_size] = 0; // to include the null terminator
     }
 
+    //copy constructor
     myString(const myString &other) : m_size(other.m_size)
     {
         std::cout << "copy constructor called\n";
@@ -25,7 +26,8 @@ public:
         memcpy(m_array, other.m_array, m_size + 1); // since this actually comes from a myString object null terminator is there
     };
 
-    myString &operator=(const myString &other)
+    //copy assignment
+    myString &operator=(const myString &other) 
     {
         std::cout << "copy assignment called\n";
         if (this != &other) // to avoid self assignment
